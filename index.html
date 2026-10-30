@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ALTA 2026 — Inscription au concours</title>
+<meta name="description" content="Inscrivez votre équipe au concours de création de contenu caritatif ALTA 2026 — 17 au 21 novembre 2026, NSNN Sidi Abdellah.">
+<meta property="og:title" content="ALTA 2026 — Inscription au concours">
+<meta property="og:description" content="10 équipes · 3 membres · 1 vidéo pour la solidarité. Inscrivez votre équipe !">
+<meta property="og:image" content="alta-2026.webp">
+<meta name="theme-color" content="#121309">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121309; --ink2:#1B1D11; --card:#1A1C10; --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
+  --text:#F4F5EC; --muted:#A9AB9A; --y:#F5CE00; --lime:#D2DC4A; --g:#A6C24E; --err:#FF6B6B; --ok:#7BD88F;
+  --grad:linear-gradient(90deg,#F5CE00 0%,#D2DC4A 55%,#A6C24E 100%);
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--ink);color:var(--text);min-height:100vh;line-height:1.5;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(700px 500px at 10% -5%,rgba(245,206,0,.16),transparent 65%),
+             radial-gradient(700px 600px at 100% 30%,rgba(166,194,78,.14),transparent 65%),
+             radial-gradient(600px 500px at 30% 110%,rgba(210,220,74,.10),transparent 65%)}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:22px 16px 60px}
+a{color:var(--lime)}
+.hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.serif{font-family:'Fraunces',serif;font-style:italic;font-weight:600}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top img{height:44px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:99px;border:1px solid var(--line2);color:var(--muted);white-space:nowrap}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(210,220,74,.2)}
+
+.hero{padding:42px 0 26px}
+.hero .wm{width:min(330px,72%);display:block;margin-bottom:22px}
+.hero h1{font-size:clamp(32px,7vw,52px);line-height:1.04;font-weight:900;letter-spacing:-.035em}
+.hero p{color:var(--muted);font-size:17px;margin-top:14px;max-width:580px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.fact{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.fact b{display:block;font-size:20px;font-weight:800;letter-spacing:-.02em}
+.fact span{font-size:12.5px;color:var(--muted)}
+
+/* stepper */
+.steps{display:flex;gap:8px;margin:8px 0 18px;align-items:flex-start}
+.step{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;font-size:12.5px;font-weight:600;color:var(--muted);white-space:nowrap}
+.step .bar{height:4px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden}
+.step .bar::after{content:"";display:block;height:100%;width:0;background:var(--grad);transition:width .35s ease}
+.step.done .bar::after,.step.on .bar::after{width:100%}
+.step.on{color:var(--text)}
+
+.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:22px}
+.card h2{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.card .sub{color:var(--muted);font-size:14.5px;margin:4px 0 18px}
+.panel{display:none;animation:in .35s ease}
+.panel.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* fields */
+.f{margin-bottom:16px}
+.f label{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px}
+.f label .req{color:var(--lime)}
+.f .hint{font-size:12.5px;color:var(--muted);margin-top:6px}
+input[type=text],input[type=email],input[type=tel],select,textarea{
+  width:100%;font:inherit;font-size:16px;color:var(--text);background:rgba(0,0,0,.28);border:1.5px solid var(--line2);
+  border-radius:12px;padding:13px 14px;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+textarea{min-height:130px;resize:vertical}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D2DC4A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+select option{background:#1B1D11;color:#F4F5EC}
+input:focus,select:focus,textarea:focus{border-color:var(--lime);box-shadow:0 0 0 4px rgba(210,220,74,.15)}
+.bad input,.bad select,.bad textarea{border-color:var(--err)}
+.msg{display:none;color:var(--err);font-size:12.5px;margin-top:6px}
+.bad .msg{display:block}
+.counter{float:right;font-weight:500;color:var(--muted);font-size:12.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.causes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cause{position:relative}
+.cause input{position:absolute;opacity:0;inset:0;pointer-events:none}
+.cause span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:56px;padding:10px;border-radius:12px;border:1.5px solid var(--line2);font-size:13.5px;font-weight:600;cursor:pointer;transition:.2s;background:rgba(0,0,0,.2)}
+.cause input:checked+span{border-color:var(--lime);background:rgba(210,220,74,.12);color:#fff}
+.cause input:focus-visible+span{box-shadow:0 0 0 4px rgba(210,220,74,.25)}
+.bad .cause span{border-color:rgba(255,107,107,.55)}
+
+.member{border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;background:rgba(0,0,0,.18)}
+.member h3{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;margin-bottom:14px}
+.member h3 .n{width:30px;height:30px;border-radius:50%;background:var(--grad);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
+.member h3 .tag{margin-left:auto;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);border:1px solid rgba(210,220,74,.4);padding:4px 9px;border-radius:99px}
+
+.check{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:#DADBCF;cursor:pointer;margin-top:12px}
+.check input{width:20px;height:20px;margin-top:1px;accent-color:#D2DC4A;flex:none}
+
+.review{display:grid;gap:12px}
+.rv{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:rgba(0,0,0,.18)}
+.rv h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;display:flex;justify-content:space-between}
+.rv h4 button{all:unset;cursor:pointer;color:var(--muted);text-transform:none;letter-spacing:0;font-size:12.5px;text-decoration:underline}
+.rv p{font-size:14.5px;color:#E6E7DC;word-break:break-word}
+.rv .mm{display:grid;gap:8px}
+.rv .mm div{font-size:14px;color:#E6E7DC}
+.rv .mm small{color:var(--muted)}
+
+.nav{display:flex;gap:10px;margin-top:20px}
+.btn{font:inherit;font-weight:800;font-size:16px;border:0;border-radius:14px;padding:15px 22px;cursor:pointer;transition:transform .15s,opacity .2s}
+.btn:active{transform:scale(.98)}
+.btn.pri{flex:1;background:var(--grad);color:var(--ink)}
+.btn.sec{background:rgba(255,255,255,.07);color:var(--text);border:1px solid var(--line2)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.spin{display:inline-block;width:16px;height:16px;border:2.5px solid rgba(18,19,9,.35);border-top-color:var(--ink);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-3px;margin-right:8px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.alert{display:none;margin-top:14px;padding:12px 14px;border-radius:12px;background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.4);color:#FFC9C9;font-size:14px}
+.alert.on{display:block}
+
+.done{text-align:center;padding:34px 22px}
+.done .ok{width:74px;height:74px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.done h2{font-size:28px}
+.done .id{display:inline-block;margin:16px 0 6px;font-size:26px;font-weight:900;letter-spacing:.06em;padding:10px 20px;border-radius:14px;border:1.5px dashed rgba(210,220,74,.6)}
+.done p{color:var(--muted);max-width:460px;margin:8px auto 0}
+
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
+footer .logos{display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:12px;opacity:.9}
+footer .logos img{height:40px}
+footer .tag{letter-spacing:.24em;font-size:11px;font-weight:700;margin-top:6px}
+
+@media (max-width:560px){
+  .facts{grid-template-columns:repeat(3,1fr);gap:8px}
+  .fact{padding:10px}
+  .fact b{font-size:17px}
+  .row2{grid-template-columns:1fr}
+  .causes{grid-template-columns:1fr 1fr}
+  .card{padding:18px;border-radius:20px}
+  .chip{font-size:10.5px;padding:7px 11px}
+  .step span{font-size:11.5px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img src="alta-logo.webp" alt="ALTA Charity Club">
+    <span class="chip"><i></i>Inscriptions ouvertes</span>
+  </header>
+
+  <section class="hero">
+    <img class="wm" src="alta-2026.webp" alt="ALTA 2026">
+    <h1>Une équipe. Une caméra.<br><span class="hl">Une cause.</span></h1>
+    <p>Inscrivez votre équipe au <b style="color:#fff">concours de création de contenu caritatif</b> d'ALTA 2026 : trois membres, une vidéo pour faire vivre la solidarité, du <b style="color:#fff">17 au 21 novembre 2026</b> à la NSNN, Sidi Abdellah.</p>
+    <div class="facts">
+      <div class="fact"><b>10</b><span>équipes seulement</span></div>
+      <div class="fact"><b>3</b><span>membres par équipe</span></div>
+      <div class="fact"><b>1</b><span>vidéo caritative</span></div>
+    </div>
+  </section>
+
+  <div id="formArea">
+    <div class="steps" aria-hidden="true">
+      <div class="step on" data-s="0"><div class="bar"></div><span>1 · Équipe</span></div>
+      <div class="step" data-s="1"><div class="bar"></div><span>2 · Membres</span></div>
+      <div class="step" data-s="2"><div class="bar"></div><span>3 · Confirmation</span></div>
+    </div>
+
+    <form id="form" class="card" novalidate autocomplete="on">
+      <div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <!-- STEP 1 -->
+      <div class="panel on" data-p="0">
+        <h2>Votre équipe</h2>
+        <p class="sub">Donnez-nous un nom et parlez-nous de votre projet.</p>
+
+        <div class="f" data-f="team">
+          <label for="team">Nom de l'équipe <span class="req">*</span></label>
+          <input id="team" name="team" type="text" maxlength="40" placeholder="Ex. Les Cœurs Lumineux">
+          <div class="msg">Le nom doit contenir entre 2 et 40 caractères.</div>
+        </div>
+
+        <div class="f" data-f="cause">
+          <label>Question 1 — Quelle cause votre vidéo mettra-t-elle en avant ? <span class="req">*</span></label>
+          <div class="causes" role="radiogroup">
+            <label class="cause"><input type="radio" name="cause" value="Enfance & orphelins"><span>Enfance &amp; orphelins</span></label>
+            <label class="cause"><input type="radio" name="cause" value="Personnes âgées"><span>Personnes âgées</span></label>
+            <label class="cause"><input type="radio" name="cause" value="Malades & don de sang"><span>Malades &amp; don de sang</span></label>
+            <label class="cause"><input type="radio" name="cause" value="Personnes sans abri"><span>Personnes sans abri</span></label>
+            <label class="cause"><input type="radio" name="cause" value="Environnement"><span>Environnement</span></label>
+            <label class="cause"><input type="radio" name="cause" value="Autre"><span>Autre</span></label>
+          </div>
+          <div class="msg">Choisissez une cause.</div>
+        </div>
+
+        <div class="f" data-f="causeOther" id="otherWrap" style="display:none">
+          <label for="causeOther">Précisez la cause <span class="req">*</span></label>
+          <input id="causeOther" name="causeOther" type="text" maxlength="60" placeholder="Ex. Personnes en situation de handicap">
+          <div class="msg">Précisez la cause choisie.</div>
+        </div>
+
+        <div class="f" data-f="idea">
+          <label for="idea">Question 2 — Pourquoi voulez-vous participer, et quelle idée de vidéo avez-vous en tête ? <span class="req">*</span> <span class="counter" id="ideaCount">0 / 800</span></label>
+          <textarea id="idea" name="idea" maxlength="800" placeholder="Quelques lignes sur votre motivation et votre première idée (vous pourrez la faire évoluer pendant le concours)."></textarea>
+          <div class="msg">Écrivez au moins 30 caractères.</div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="panel" data-p="1">
+        <h2>Les membres</h2>
+        <p class="sub">Trois membres par équipe. Le premier est le chef d'équipe, notre contact principal.</p>
+        <div id="members"></div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="panel" data-p="2">
+        <h2>Vérifiez et confirmez</h2>
+        <p class="sub">Relisez vos informations avant d'envoyer l'inscription.</p>
+        <div class="review" id="review"></div>
+        <div class="f" data-f="accept" style="margin:16px 0 0">
+          <label class="check"><input type="checkbox" id="accept" name="accept">
+            <span>Nous confirmons que les trois membres sont disponibles du <b>17 au 21 novembre 2026</b>, nous acceptons le règlement du concours et nous acceptons que ces informations soient utilisées par ALTA Charity Club pour l'organisation de l'événement.</span></label>
+          <div class="msg">Cochez cette case pour envoyer l'inscription.</div>
+        </div>
+      </div>
+
+      <div class="alert" id="alert" role="alert"></div>
+
+      <div class="nav">
+        <button type="button" class="btn sec" id="back" style="display:none">Retour</button>
+        <button type="button" class="btn pri" id="next">Continuer</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="success" class="card done" style="display:none">
+    <div class="ok"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#121309" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h2>Inscription envoyée !</h2>
+    <p>Merci <b id="sTeam" style="color:#fff"></b>. Votre numéro d'inscription :</p>
+    <div class="id hl" id="sId"></div>
+    <p id="sNote">Notre équipe vous contactera par email ou par téléphone pour confirmer votre participation. Gardez ce numéro précieusement.</p>
+  </div>
+
+  <footer>
+    <div class="logos"><img src="alta-logo.webp" alt="ALTA"><img src="nsnn.webp" alt="NSNN"></div>
+    Une question ? <a href="mailto:malekkdjr@gmail.com">malekkdjr@gmail.com</a> · WhatsApp <a href="https://wa.me/213784463883">0784 46 38 83</a>
+    <div class="tag">AID · LOVE · TOGETHERNESS · ACTION</div>
+  </footer>
+</div>
+
+<script>
+/* ====== CONFIG : URL de l'application Web Google Apps Script ====== */
+const API_URL = "https://script.google.com/macros/s/AKfycbxsPdD0baZCg0JuO6sEr05rixDCuP25IoETHcf04alH86U-LEVfEMCBgwJ5zoOV1Vp8/exec";
+/* =================================================================== */
+
+const ROLES = ["Scénario & storytelling","Tournage & prise de vue","Montage & post-production","Acteur / voix off","Polyvalent"];
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* Build member cards */
+const membersEl = $("#members");
+for (let i = 0; i < 3; i++) {
+  const lead = i === 0;
+  membersEl.insertAdjacentHTML("beforeend", `
+  <div class="member">
+    <h3><span class="n">${i + 1}</span>${lead ? "Chef d'équipe" : "Membre " + (i + 1)}${lead ? '<span class="tag">Contact</span>' : ""}</h3>
+    <div class="f" data-f="m${i}name"><label for="m${i}name">Nom et prénom <span class="req">*</span></label>
+      <input id="m${i}name" type="text" autocomplete="${lead ? "name" : "off"}" maxlength="60" placeholder="Prénom Nom"><div class="msg">Nom complet requis.</div></div>
+    <div class="row2">
+      <div class="f" data-f="m${i}email"><label for="m${i}email">Email <span class="req">*</span></label>
+        <input id="m${i}email" type="email" inputmode="email" autocomplete="${lead ? "email" : "off"}" maxlength="80" placeholder="nom@exemple.com"><div class="msg">Email invalide.</div></div>
+      <div class="f" data-f="m${i}phone"><label for="m${i}phone">Téléphone <span class="req">*</span></label>
+        <input id="m${i}phone" type="tel" inputmode="tel" autocomplete="${lead ? "tel" : "off"}" maxlength="16" placeholder="05XX XX XX XX"><div class="msg">Numéro algérien invalide (ex. 0555 12 34 56).</div></div>
+    </div>
+    <div class="row2">
+      <div class="f" data-f="m${i}school"><label for="m${i}school">Établissement / année <span class="req">*</span></label>
+        <input id="m${i}school" type="text" maxlength="60" placeholder="Ex. NSNN — 2e année"><div class="msg">Établissement requis.</div></div>
+      <div class="f" data-f="m${i}role"><label for="m${i}role">Rôle dans l'équipe <span class="req">*</span></label>
+        <select id="m${i}role"><option value="">Choisir un rôle…</option>${ROLES.map(r => `<option>${esc(r)}</option>`).join("")}</select>
+        <div class="msg">Choisissez un rôle.</div></div>
+    </div>
+  </div>`);
+}
+
+/* Helpers */
+const val = id => ($("#" + id).value || "").replace(/\s+/g, " ").trim();
+const phoneOk = p => /^(?:\+213|00213|0)[5-7]\d{8}$/.test(p.replace(/[\s.\-]/g, ""));
+const emailOk = e => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+function mark(key, bad) { const el = $(`[data-f="${key}"]`); if (el) el.classList.toggle("bad", !!bad); return !bad; }
+function cause() { const c = $('input[name="cause"]:checked'); return c ? c.value : ""; }
+function causeFull() { const c = cause(); return c === "Autre" ? "Autre — " + val("causeOther") : c; }
+
+/* Validation per step */
+function check(step) {
+  let ok = true;
+  if (step === 0) {
+    const t = val("team");
+    ok = mark("team", t.length < 2 || t.length > 40) && ok;
+    ok = mark("cause", !cause()) && ok;
+    if (cause() === "Autre") ok = mark("causeOther", val("causeOther").length < 2) && ok; else mark("causeOther", false);
+    ok = mark("idea", val("idea").length < 30) && ok;
+  }
+  if (step === 1) {
+    const emails = [];
+    for (let i = 0; i < 3; i++) {
+      ok = mark(`m${i}name`, val(`m${i}name`).length < 3) && ok;
+      const e = val(`m${i}email`).toLowerCase();
+      let eBad = !emailOk(e);
+      const msgEl = $(`[data-f="m${i}email"] .msg`);
+      msgEl.textContent = "Email invalide.";
+      if (!eBad && emails.includes(e)) { eBad = true; msgEl.textContent = "Chaque membre doit avoir un email différent."; }
+      emails.push(e);
+      ok = mark(`m${i}email`, eBad) && ok;
+      ok = mark(`m${i}phone`, !phoneOk(val(`m${i}phone`))) && ok;
+      ok = mark(`m${i}school`, val(`m${i}school`).length < 2) && ok;
+      ok = mark(`m${i}role`, !val(`m${i}role`)) && ok;
+    }
+  }
+  if (step === 2) ok = mark("accept", !$("#accept").checked) && ok;
+  if (!ok) { const first = $(`.panel[data-p="${step}"] .bad`); if (first) { first.scrollIntoView({ behavior: "smooth", block: "center" }); const inp = first.querySelector("input,select,textarea"); if (inp && inp.type !== "radio") setTimeout(() => inp.focus({ preventScroll: true }), 300); } }
+  return ok;
+}
+
+/* Live clearing of errors */
+$("#form").addEventListener("input", e => { const f = e.target.closest(".f"); if (f && f.classList.contains("bad")) f.classList.remove("bad"); });
+$("#form").addEventListener("change", e => {
+  if (e.target.name === "cause") { $("#otherWrap").style.display = e.target.value === "Autre" ? "block" : "none"; mark("cause", false); }
+  const f = e.target.closest(".f"); if (f) f.classList.remove("bad");
+});
+$("#idea").addEventListener("input", () => { $("#ideaCount").textContent = $("#idea").value.length + " / 800"; });
+
+/* Review */
+function buildReview() {
+  const ms = [0, 1, 2].map(i => `<div><b>${i === 0 ? "Chef" : "Membre " + (i + 1)} — ${esc(val(`m${i}name`))}</b> · ${esc(val(`m${i}role`))}<br><small>${esc(val(`m${i}email`))} · ${esc(val(`m${i}phone`))} · ${esc(val(`m${i}school`))}</small></div>`).join("");
+  $("#review").innerHTML = `
+    <div class="rv"><h4>Équipe <button type="button" data-go="0">Modifier</button></h4><p><b>${esc(val("team"))}</b><br>Cause : ${esc(causeFull())}</p></div>
+    <div class="rv"><h4>Idée / motivation <button type="button" data-go="0">Modifier</button></h4><p>${esc(val("idea"))}</p></div>
+    <div class="rv"><h4>Membres <button type="button" data-go="1">Modifier</button></h4><div class="mm">${ms}</div></div>`;
+}
+$("#review").addEventListener("click", e => { const b = e.target.closest("[data-go]"); if (b) go(+b.dataset.go); });
+
+/* Navigation */
+let cur = 0;
+function go(n) {
+  cur = n;
+  $$(".panel").forEach(p => p.classList.toggle("on", +p.dataset.p === n));
+  $$(".step").forEach(s => { const i = +s.dataset.s; s.classList.toggle("on", i === n); s.classList.toggle("done", i < n); });
+  $("#back").style.display = n > 0 ? "" : "none";
+  $("#next").textContent = n === 2 ? "Envoyer l'inscription" : "Continuer";
+  $("#alert").classList.remove("on");
+  if (n === 2) buildReview();
+  $("#formArea").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+$("#back").addEventListener("click", () => go(Math.max(0, cur - 1)));
+$("#next").addEventListener("click", () => {
+  if (!check(cur)) return;
+  if (cur < 2) return go(cur + 1);
+  submit();
+});
+$("#form").addEventListener("submit", e => e.preventDefault());
+
+/* Submit */
+async function submit() {
+  const btn = $("#next"), alertEl = $("#alert");
+  alertEl.classList.remove("on");
+  if (!API_URL) { alertEl.textContent = "Les inscriptions ne sont pas encore ouvertes. Réessayez plus tard."; alertEl.classList.add("on"); return; }
+  const payload = {
+    website: $('input[name="website"]').value,
+    team: val("team"), cause: causeFull(), idea: val("idea"), accept: $("#accept").checked,
+    members: [0, 1, 2].map(i => ({ name: val(`m${i}name`), email: val(`m${i}email`).toLowerCase(), phone: val(`m${i}phone`).replace(/[\s.\-]/g, ""), school: val(`m${i}school`), role: val(`m${i}role`) }))
+  };
+  btn.disabled = true; $("#back").disabled = true;
+  btn.innerHTML = '<span class="spin"></span>Envoi en cours…';
+  try {
+    const ctrl = new AbortController(); const to = setTimeout(() => ctrl.abort(), 30000);
+    const res = await fetch(API_URL, { method: "POST", body: JSON.stringify(payload), redirect: "follow", signal: ctrl.signal });
+    clearTimeout(to);
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || "Erreur inconnue.");
+    $("#sTeam").textContent = payload.team;
+    $("#sId").textContent = data.id;
+    if (data.status === "Liste d'attente") $("#sNote").textContent = "Les 10 places sont déjà prises : votre équipe est inscrite sur la liste d'attente. Nous vous contacterons si une place se libère.";
+    $("#formArea").style.display = "none";
+    $("#success").style.display = "block";
+    $("#success").scrollIntoView({ behavior: "smooth", block: "center" });
+  } catch (err) {
+    alertEl.textContent = err.name === "AbortError" ? "Le serveur ne répond pas. Vérifiez votre connexion et réessayez." : (err.message.startsWith("Failed") || err.message.includes("JSON") ? "Impossible d'envoyer l'inscription. Vérifiez votre connexion et réessayez." : err.message);
+    alertEl.classList.add("on");
+    btn.disabled = false; $("#back").disabled = false;
+    btn.textContent = "Envoyer l'inscription";
+  }
+}
+</script>
+</body>
+</html>
